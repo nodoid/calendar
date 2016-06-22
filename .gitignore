@@ -1,0 +1,8 @@
+packages/*
+calendar/bin/*
+calendar/obj/*
+Droid/bin/*
+Droid/obj/*
+iOS/bin/*
+iOS/obj/*
+*.userprefs

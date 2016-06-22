@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{E5691EAC-DAEA-4E05-8C23-DF310C3389F7}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="calendar/CalendarPage.cs">
+    <Files>
+      <File FileName="calendar/calendar.cs" Line="11" Column="10" />
+      <File FileName="calendar/CalendarPage.cs" Line="188" Column="10" />
+      <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="iOS/AppDelegate.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.calendar.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.7DB25C59-79AA-4463-AFF7-001A6B4E76D8" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

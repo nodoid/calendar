@@ -5,6 +5,6 @@ Droid/bin/*
 Droid/obj/*
 iOS/bin/*
 iOS/obj/*
-WinPhone/bin/*
-WinPhone/obj/*
+calendar.WinPhone/bin/*
+calendar.WinPhone/obj/*
 *.userprefs

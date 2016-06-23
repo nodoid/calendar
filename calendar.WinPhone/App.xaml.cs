@@ -53,6 +53,7 @@ namespace calendar.WinPhone
 
                 // TODO: change this value to a cache size that is appropriate for your application
                 rootFrame.CacheSize = 1;
+                Xamarin.Forms.Forms.Init(e);
 
                 // Set the default language
                 rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];

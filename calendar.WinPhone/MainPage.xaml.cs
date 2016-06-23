@@ -1,5 +1,4 @@
 ﻿using Windows.UI.Xaml;
-using Xamarin.Forms;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
@@ -13,12 +12,12 @@ namespace calendar.WinPhone
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
-            this.NavigationCacheMode = NavigationCacheMode.Required;
+            NavigationCacheMode = NavigationCacheMode.Required;
 
-            var rawpixelperview = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
-            calendar.App.ScreenSize = new Xamarin.Forms.Size(Window.Current.Bounds.Width * rawpixelperview, Window.Current.Bounds.Height * rawpixelperview);
+            calendar.App.ScreenSize = new Xamarin.Forms.Size(Window.Current.Bounds.Width, Window.Current.Bounds.Height);
+
             LoadApplication(new calendar.App());
         }
 

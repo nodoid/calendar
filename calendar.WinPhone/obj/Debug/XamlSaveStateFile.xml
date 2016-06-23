@@ -1,4 +1,11 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
+    <LocalAssembly PathName="c:\users\paul\documents\visual studio 2015\projects\calendar\calendar.winphone\obj\debug\intermediatexaml\calendar.winphone.exe" HashGuid="5b7ef085-7099-28c4-9aef-3d49b22b4ac0" />
+    <ReferenceAssembly PathName="c:\users\paul\documents\visual studio 2015\projects\calendar\calendar\bin\debug\calendar.dll" HashGuid="8e82c1cc-2a2c-cd49-e2e1-d55f49b22bd2" />
+    <ReferenceAssembly PathName="c:\users\paul\documents\visual studio 2015\projects\calendar\packages\xamarin.forms.2.3.0.49\lib\wpa81\xamarin.forms.core.dll" HashGuid="c30391b9-f93a-55bc-3bed-bad91032c5ef" />
+    <ReferenceAssembly PathName="c:\users\paul\documents\visual studio 2015\projects\calendar\packages\xamarin.forms.2.3.0.49\lib\wpa81\xamarin.forms.platform.dll" HashGuid="6b938cd4-44c0-2618-7eb6-4caa3f482076" />
+    <ReferenceAssembly PathName="c:\users\paul\documents\visual studio 2015\projects\calendar\packages\xamarin.forms.2.3.0.49\lib\wpa81\xamarin.forms.platform.winrt.dll" HashGuid="0582f833-519c-0b5c-af4a-4e3bd65d7303" />
+    <ReferenceAssembly PathName="c:\users\paul\documents\visual studio 2015\projects\calendar\packages\xamarin.forms.2.3.0.49\lib\wpa81\xamarin.forms.platform.winrt.phone.dll" HashGuid="ed0eb42c-d027-efc5-2897-d47071690c00" />
+    <ReferenceAssembly PathName="c:\users\paul\documents\visual studio 2015\projects\calendar\packages\xamarin.forms.2.3.0.49\lib\wpa81\xamarin.forms.xaml.dll" HashGuid="68924db8-a65f-e414-d0af-af182cfb1786" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

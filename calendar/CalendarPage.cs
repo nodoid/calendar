@@ -10,12 +10,12 @@ namespace calendar
     {
         public CalendarPage()
         {
-            CreateUI(DateTime.Now.Month - 1, DateTime.Now.Year);
+            CreateUI(DateTime.Now.Month, DateTime.Now.Year);
         }
 
         void CreateUI(int month, int year)
         {
-            var dtn = DateTime.Now;
+            var dtn = new DateTime(year, month, DateTime.Now.Day);
 
             var months = new List<string>
             {
@@ -25,7 +25,7 @@ namespace calendar
 
             var lblDate = new Label
             {
-                Text = string.Format("{0} {1}", months[month], year.ToString()),
+                Text = string.Format("{0} {1}", months[month - 1], year.ToString()),
                 BackgroundColor = Color.Blue,
                 WidthRequest = App.ScreenSize.Width * .8,
                 VerticalTextAlignment = TextAlignment.Center,
@@ -68,12 +68,12 @@ namespace calendar
                 HorizontalOptions = LayoutOptions.StartAndExpand,
                 RowDefinitions =
                 {
-                    new RowDefinition { Height = GridLength.Auto },
-                    new RowDefinition { Height = GridLength.Auto },
-                    new RowDefinition { Height = GridLength.Auto },
-                    new RowDefinition { Height = GridLength.Auto },
-                    new RowDefinition { Height = GridLength.Auto },
-                    new RowDefinition { Height = GridLength.Auto }
+                    new RowDefinition { Height = App.ScreenSize.Height * .1 },
+                    new RowDefinition { Height = App.ScreenSize.Height * .1 },
+                    new RowDefinition { Height = App.ScreenSize.Height * .1 },
+                    new RowDefinition { Height = App.ScreenSize.Height * .1 },
+                    new RowDefinition { Height = App.ScreenSize.Height * .1 },
+                    new RowDefinition { Height = App.ScreenSize.Height * .1 }
                 },
                 ColumnDefinitions =
                 {
@@ -85,31 +85,6 @@ namespace calendar
                     new ColumnDefinition { Width = width },
                     new ColumnDefinition { Width = width },
                 }
-            };
-
-            btnBack.Clicked += delegate
-{
-    month--;
-    if (month == -1)
-    {
-        month = 11;
-        year -= 1;
-    }
-
-    CreateUI(month, year);
-};
-
-            btnNext.Clicked += delegate
-            {
-                month++;
-                if (month == 12)
-                {
-                    month = 0;
-                    year += 1;
-                }
-                if (grid.ColumnDefinitions.Any())
-                    grid.ColumnDefinitions.Clear();
-                CreateUI(month, year);
             };
 
             var dayLabels = CreateDayLabels();
@@ -127,7 +102,11 @@ namespace calendar
 
             foreach (var dl in dateLabels)
             {
+                var tgr = new TapGestureRecognizer();
+                tgr.Tapped += LabelTapped;
+                dl.GestureRecognizers.Add(tgr);
                 grid.Children.Add(dl, left, top);
+
                 left++;
                 if (left == 7)
                 {
@@ -150,6 +129,37 @@ namespace calendar
             };
 
             Content = cont;
+
+            btnBack.Clicked += delegate
+            {
+                month--;
+                if (month == 0)
+                {
+                    month = 12;
+                    year -= 1;
+                }
+
+                CreateUI(month, year);
+            };
+
+            btnNext.Clicked += delegate
+            {
+                month++;
+                if (month == 13)
+                {
+                    month = 1;
+                    year += 1;
+                }
+
+                CreateUI(month, year);
+            };
+        }
+
+        void LabelTapped(object sender, EventArgs e)
+        {
+            var lbl = sender as Label;
+            var ending = lbl.StyleId == "1" ? "st" : lbl.StyleId == "2" ? "nd" : lbl.StyleId == "3" ? "rd" : "th";
+            DisplayAlert("Date clicked", string.Format("You have clicked the {0}{1} of the month", lbl.StyleId, ending), "OK");
         }
 
         ObservableCollection<Label> CreateDayLabels()
@@ -173,7 +183,13 @@ namespace calendar
             {
                 labelList.Add
                 (
-                    new Label { Text = (n + 1).ToString(), HorizontalTextAlignment = TextAlignment.Center, VerticalTextAlignment = TextAlignment.Center }
+                    new Label
+                    {
+                        Text = (n + 1).ToString(),
+                        StyleId = (n + 1).ToString(),
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        VerticalTextAlignment = TextAlignment.Center
+                    }
                 );
             }
             return labelList;
